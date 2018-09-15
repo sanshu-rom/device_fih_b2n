@@ -1,3 +1,6 @@
 # SELinux : avc: denied { call } for comm="Thread-2" scontext=u:r:system_app:s0 tcontext=u:r:rild:s0 tclass=binder permissive=0
-type system_app, rild, binder;
+type system_app, rild, binder, proc_pagetypeinfo, sysfs_zram, proc_pagetypeinfo;
 allow system_app rild:binder { call };
+allow system_app proc_pagetypeinfo:file { read };
+allow system_app sysfs_zram:dir { search };
+allow system_app proc_pagetypeinfo:file { read };
