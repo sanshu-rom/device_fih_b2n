@@ -1,0 +1,7 @@
+# SELinux : avc: denied { search } for comm="android.hardwar" name="proc" dev="debugfs" ino=12392 scontext=u:r:hal_camera_default:s0 tcontext=u:object_r:qti_debugfs:s0 tclass=dir permissive=0
+type hal_camera_default, qti_debugfs;
+allow hal_camera_default qti_debugfs:dir { search };
+
+# SELinux : avc: denied { execute_no_trans } for comm="android.hardwar" path="/vendor/bin/sh" dev="mmcblk0p83" ino=153 scontext=u:r:hal_camera_default:s0 tcontext=u:object_r:vendor_shell_exec:s0 tclass=file permissive=0
+type vendor_shell_exec;
+allow hal_camera_default vendor_shell_exec:file { execute_no_trans };
