@@ -1,3 +1,4 @@
 # SELinux : avc: denied { create } for comm="ueventd" name="mmcblk0p5" scontext=u:r:ueventd:s0 tcontext=u:object_r:fih_partition:s0 tclass=blk_file permissive=0
-type fih_partition;
-allow ueventd fih_partition:blk_file {create};
+type fih_partition, params_block_device;
+allow ueventd fih_partition:blk_file { create };
+allow ueventd params_block_device:blk_file { create };
