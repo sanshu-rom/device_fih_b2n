@@ -1,3 +1,6 @@
 # SELinux : avc: denied { read } for comm="DispatcherModul" name="u:object_r:vendor_pd_locater_dbg_prop:s0" dev="tmpfs" ino=19566 scontext=u:r:rild:s0 tcontext=u:object_r:vendor_pd_locater_dbg_prop:s0 tclass=file permissive=0
 type rild, vendor_pd_locater_dbg_prop;
 allow rild vendor_pd_locater_dbg_prop:file { read }
+
+# SELinux : avc: denied { call } for scontext=u:r:rild:s0 tcontext=u:r:system_app:s0 tclass=binder permissive=1
+allow rild system_app:binder { call };
