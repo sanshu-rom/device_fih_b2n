@@ -1,0 +1,3 @@
+# SELinux : avc: denied { search } for comm="time_daemon" name="persist" dev="dm-0" ino=24 scontext=u:r:time_daemon:s0 tcontext=u:object_r:persist_file:s0 tclass=dir permissive=0
+type time_daemon, persist_file;
+allow time_daemon persist_file:dir { search };
