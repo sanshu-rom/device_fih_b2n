@@ -1,0 +1,3 @@
+# SELinux : avc: denied { getattr } for comm="init" name="/" dev="mmcblk0p64" ino=2 scontext=u:r:vendor_init:s0 tcontext=u:object_r:hidden_files:s0 tclass=filesystem permissive=0
+type vendor_init, hidden_files;
+allow vendor_init hidden_files:filesystem { getattr };
