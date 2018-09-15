@@ -1,0 +1,3 @@
+# SELinux : avc: denied { setattr } for comm="init" name="brightness" dev="sysfs" ino=37940 scontext=u:r:init:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
+type sysfs;
+allow init sysfs:file { setattr };
