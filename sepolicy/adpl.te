@@ -1,3 +1,4 @@
 # SELinux : avc: denied { read write } for comm="adpl" name="diag" dev="tmpfs" ino=18773 scontext=u:r:adpl:s0 tcontext=u:object_r:diag_device:s0 tclass=chr_file permissive=0
 type adpl;
-allow adpl diag_device:chr_file { read write };
+allow adpl diag_device:chr_file read;
+allow adpl diag_device:chr_file write;

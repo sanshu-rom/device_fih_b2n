@@ -1,3 +1,4 @@
 # SELinux : avc: denied { read write } for comm="ipacm-diag" name="diag" dev="tmpfs" ino=18773 scontext=u:r:ipacm-diag:s0 tcontext=u:object_r:diag_device:s0 tclass=chr_file permissive=0
 type ipacm-diag, diag_device;
-allow ipacm-diag diag_device:chr_file { read write };
+allow ipacm-diag diag_device:chr_file read;
+allow ipacm-diag diag_device:chr_file write;

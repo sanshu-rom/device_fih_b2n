@@ -1,7 +1,7 @@
 # SELinux : avc: denied { getattr } for comm="init" name="/" dev="mmcblk0p64" ino=2 scontext=u:r:vendor_init:s0 tcontext=u:object_r:hidden_files:s0 tclass=filesystem permissive=0
 type vendor_init, hidden_files;
-allow vendor_init hidden_files:filesystem { getattr };
+allow vendor_init hidden_files:filesystem getattr;
 
 # SELinux : avc: denied { create } for comm="init" name="camera" scontext=u:r:vendor_init:s0 tcontext=u:object_r:camera_data_file:s0 tclass=dir permissive=0
 type camera_data_file;
-allow vendor_init camera_data_file:dir { create };
+allow vendor_init camera_data_file:dir create;

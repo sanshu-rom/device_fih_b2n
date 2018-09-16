@@ -1,11 +1,11 @@
 # SELinux : avc: denied { search } for comm="cat" name="persist" dev="dm-0" ino=24 scontext=u:r:qti_init_shell:s0 tcontext=u:object_r:persist_file:s0 tclass=dir permissive=0
 type qti_init_shell, persist_file;
-allow qti_init_shell persist_file:dir { search };
+allow qti_init_shell persist_file:dir search;
 
 # SELinux : avc:  denied  { set } for property=ro.alarm_boot pid=878 uid=0 gid=0 scontext=u:r:qti_init_shell:s0 tcontext=u:object_r:default_prop:s0 tclass=property_service permissive=0
 type default_prop, property_service;
-allow qti_init_shell default_prop:property_service { set };
+allow qti_init_shell default_prop:property_service set;
 
 # SELinux : avc: denied { dac_override } for comm="chown" capability=1 scontext=u:r:qti_init_shell:s0 tcontext=u:r:qti_init_shell:s0 tclass=capability permissive=0
 type capability;
-allow qti_init_shell qti_init_shell:capability { dac_override };
+allow qti_init_shell qti_init_shell:capability dac_override;
